@@ -5,6 +5,8 @@ describe('login suite', function() {
       let loginPage = new LoginPage();
 
       await loginPage.open();
+      allure.createStep('login', function() {})();
+
       let productsPage = await loginPage.login("alyonagladych@gmail.com", "x&b*zmzA^oj");
 
       console.log(productsPage.header + '####################################');
@@ -12,4 +14,4 @@ describe('login suite', function() {
   
      expect(await productsPage.header.isHeaderVisible()).toEqual(true);
     });
-});
+  });
